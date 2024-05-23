@@ -1,17 +1,6 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: prakhar
-      POSTGRES_PASSWORD: prakhar
-      POSTGRES_DB: postgres
-
   springbootapp:
     build:
       context: .
@@ -20,9 +9,3 @@ services:
     restart: always
     ports:
       - "8080:8080"
-    depends_on:
-      - postgres
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
-      SPRING_DATASOURCE_USERNAME: prakhar
-      SPRING_DATASOURCE_PASSWORD: prakhar
