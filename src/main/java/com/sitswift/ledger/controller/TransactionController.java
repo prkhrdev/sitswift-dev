@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/transaction")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TransactionController {
     @Autowired
     private TransactionService transactionService;
